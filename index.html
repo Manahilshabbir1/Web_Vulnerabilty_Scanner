@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Vulnerability Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1> Web Vulnerability Scanner</h1>
+
+<form method="POST" action="/scan">
+    <input type="text" name="url" placeholder="Enter Website URL" required>
+    <button type="submit">Scan</button>
+</form>
+
+{% if results %}
+<h2>Results for {{url}}</h2>
+
+<ul>
+{% for item in results %}
+<li>{{item}}</li>
+{% endfor %}
+</ul>
+{% endif %}
+
+</div>
+
+</body>
+</html>
